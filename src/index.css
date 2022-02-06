@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.card__container{
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.forms__container{
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__listing {
+  text-align: left;
+
+}
+
+.layout__container{
+  margin: 0 20px 0 20px;
+}
+
+
+.profile__img {
+  border-radius: 50%;
+  height: 120px;
+  width: auto;
+}
+
+
+.dropdown__class{
+  text-align: left;
+  justify-content: left;
+}
