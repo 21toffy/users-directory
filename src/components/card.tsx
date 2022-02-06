@@ -51,7 +51,6 @@ const Card: React.FC<CardProps> = (props: any) => {
                     onKeyUp={(e: any) => {
                         const userFilterText = UserStore.filterUserByName(e.target.value)
                         setAllUsers(toJS(userFilterText))
-
                     }}
                     onChange={(e: any) => setSearchParam(e.target.value)} value={searchParam.name}
                     autoComplete='off'
@@ -64,15 +63,15 @@ const Card: React.FC<CardProps> = (props: any) => {
                     name="tag"
                     onKeyUp={(e: any) => {
                         const userFilterText = UserStore.filterUserByTag(e.target.value)
-                        setAllUsers(toJS(userFilterText))
-
+                            setAllUsers(toJS(userFilterText))
+                        
                     }}
                     onChange={(e: any) => setSearchParam(e.target.value)} value={searchParam.tag}
                     autoComplete='off'
                 />
             </FormControl>
         </div>
-        
+
         <div className=''>
             {
                 allUsers.map((user: any) => (

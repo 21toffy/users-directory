@@ -32,6 +32,7 @@ export interface User {
 
 class UserStore {
   @observable users: User[] = [];
+  @observable tags: any = ['React', 'hello'];
   loading = false
 
 
@@ -42,20 +43,35 @@ class UserStore {
 
   @action
   filterUserByName(param: string) {
+    if(param.trim()===""){
+      return this.users
+    }
     const filteredResult = this.users.filter(user =>
       user.name.toLowerCase().includes(param.toLowerCase())   
     )
     return filteredResult
   }
 
+  @action
+  createNewTagOption(tagOption: string){
+    this.tags = [...this.tags, tagOption]
+  }
 
   @action
   filterUserByTag(param: string) {
-    console.log(param)
-    const filteredResult = this.users.filter(user =>
-      user.tags.includes(param.toLowerCase())   
-    )
+    // console.log(param)
+    if(param.trim()===""){
+      return this.users
+    }const filteredResult = this.users.map(user =>{
+      const isIn  = user.tags.some((option)=> (option.toLowerCase().includes(param.toLowerCase())))  
+      return isIn ? user : null 
+    }
+    
+    ).filter(user=>(user))
+    
+    console.log("filtered result",filteredResult)
     return filteredResult
+
   }
 
 
