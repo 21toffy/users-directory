@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { set, toJS } from 'mobx'
 import { observer } from 'mobx-react'
 import Form from './form';
-import CollapseCard from './tab';
+import CollapseCard from './collapseCard';
 import UserStore from '../Store/userStore';
 import usersStore from '../Store/userStore';
 

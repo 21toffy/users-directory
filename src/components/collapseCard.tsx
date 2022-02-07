@@ -100,10 +100,10 @@ function CollapseCard(props: any) {
 
 
 
-
           <Select
             // formatCreateLabel = 
-            styles={customStyles}
+            // styles={customStyles}
+            placeholder='Add a Tag'
             onChange={(e: any) => {
               usersStore.addTagToUser(user.id, e.value)
               refetch()

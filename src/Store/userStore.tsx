@@ -41,6 +41,7 @@ class UserStore {
     makeAutoObservable(this);
   }
 
+
   @action
   filterUserByName(param: string) {
     if(param.trim()===""){
@@ -52,10 +53,14 @@ class UserStore {
     return filteredResult
   }
 
+
+
   @action
   createNewTagOption(tagOption: string){
     this.tags = [...this.tags, tagOption]
   }
+
+
 
   @action
   filterUserByTag(param: string) {
@@ -115,6 +120,8 @@ autorun(() => {
 })
 
 
+
+
 const fetchUsersjson = async (url: any) => {
   try {
     const response = await fetch(url);
@@ -123,7 +130,6 @@ const fetchUsersjson = async (url: any) => {
 
   } catch (error: any) {
     throw new Error(error.message)
-    // console.log(error)
   }
 }
 
